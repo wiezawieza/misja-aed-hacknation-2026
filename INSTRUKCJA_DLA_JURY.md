@@ -93,7 +93,7 @@ Naciśnij **Tab** na początku strony (pojawi się „Przejdź do treści”), p
 ### 14. Zgodność z mechanizmami dane.gov.pl
 Strona startowa → sekcja **„Jak to działa”**; README → sekcja „Zgodność z dane.gov.pl”.
 
-**Oczekiwany rezultat:** wskazany precedens z portalu (15 255 zbiorów „ceny ofertowe mieszkań” od 6 973 instytucji typu `developer` – każdy deweloper to osobny dostawca publikujący wg jednego wzorca; materiały bazy wiedzy dla deweloperów i starostów); odwzorowanie pojęć portalu (instytucja = dostawca, zbiór danych, zasób, API `/1.4/resources/{id}/data`, dane tabelaryczne z Table Schema, częstotliwość aktualizacji, stopień otwartości, „Zgłoś uwagę”); prototyp **nie publikuje** niczego w portalu – publikuje dostawca.
+**Oczekiwany rezultat:** wskazany precedens z portalu (15 255 zbiorów „ceny ofertowe mieszkań” od 6 971 instytucji typu `developer` – każdy deweloper to osobny dostawca publikujący wg jednego wzorca; materiały bazy wiedzy dla deweloperów i starostów); odwzorowanie pojęć portalu (instytucja = dostawca, zbiór danych, zasób, API `/1.4/resources/{id}/data`, dane tabelaryczne z Table Schema, częstotliwość aktualizacji, stopień otwartości, „Zgłoś uwagę”); prototyp **nie publikuje** niczego w portalu – publikuje dostawca.
 
 ### 15. Prezentacja
 Otwórz `prezentacja/index.html` (strzałki ← →) lub `prezentacja/prezentacja.pdf`.

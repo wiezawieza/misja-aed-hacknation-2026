@@ -1,0 +1,11 @@
+{
+  "name": "misja-aed-prototyp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Misja AED – prototyp: wzorcowy zakres danych, walidacja, agregacja i onboarding dostawców danych o AED dla dane.gov.pl (HackNation 2026).",
+  "scripts": {
+    "start": "node narzedzia/serwer.mjs",
+    "dev": "node narzedzia/serwer.mjs"
+  },
+  "license": "CC-BY-4.0"
+}

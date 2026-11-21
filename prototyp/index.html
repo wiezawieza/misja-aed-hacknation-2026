@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Misja AED – prototyp</title>
+  <meta name="description" content="Prototyp: wzorcowy zakres danych, walidacja, agregacja i onboarding dostawców danych o defibrylatorach AED dla dane.gov.pl. HackNation 2026.">
+  <link rel="icon" href="../logo/sygnet-favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Przejdź do treści</a>
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="#/" aria-label="Misja AED – strona startowa prototypu">
+        <span class="brand-mark" aria-hidden="true">AED</span>
+        <span>Misja AED<small>prototyp agregatora danych dla dane.gov.pl</small></span>
+      </a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="nav" id="nav" aria-label="Główna nawigacja">
+        <a href="#/">Start</a>
+        <a href="#/mapa">Mapa AED</a>
+        <a href="#/dostawca">Zostań dostawcą</a>
+        <a href="#/zbior">Wzorcowy zbiór</a>
+        <a href="#/sluzby">Dla służb</a>
+        <a href="#/schemat">Wzorcowy zakres</a>
+        <a href="#/akcja">Akcja</a>
+        <a href="#/jury" class="nav-jury">Dla jury</a>
+      </nav>
+    </div>
+  </header>
+  <p class="demo-bar">Prototyp HackNation 2026. Rekordy oznaczone <b>DEMO</b> są syntetyczne; rekordy z Krosna, Przemyśla, Marek i Legionowa pochodzą z prawdziwych zasobów dane.gov.pl. Publikacja w portalu jest <b>symulowana</b>.</p>
+  <main id="main" tabindex="-1"><noscript><div class="wrap section"><h1>Włącz JavaScript</h1><p>Prototyp wymaga JavaScript. Dane i schemat są też dostępne jako pliki w katalogach <code>schemat/</code> i <code>dane/</code>.</p></div></noscript></main>
+  <footer class="foot">
+    <div class="wrap">
+      <p>Misja AED – prototyp zespołu Zapachowy na HackNation 2026 (zadanie Ministerstwa Cyfryzacji „Misja AED – Dane na ratunek”). Nie jest serwisem dane.gov.pl ani narzędziem operacyjnym – w nagłym zagrożeniu dzwoń 112.</p>
+      <p>Dane źródłowe: dane.gov.pl (Urząd Miasta Krosna – CC0 1.0; Urząd Miejski w Przemyślu – CC0 1.0; Urząd Miasta Marki – CC BY 4.0; Urząd Miasta Legionowo – CC0 1.0). Podkład mapy: © współtwórcy OpenStreetMap (ODbL); warstwa OSM z AED – tylko konektor, bez danych (licencja ODbL niekompatybilna). Biblioteki: Leaflet (BSD-2), SheetJS CE (Apache-2.0).</p>
+    </div>
+  </footer>
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script src="vendor/xlsx.full.min.js"></script>
+  <script src="js/dane/schemat.js"></script>
+  <script src="js/dane/zrodla.js"></script>
+  <script src="js/dane/rekordy.js"></script>
+  <script src="js/dane/osm.js"></script>
+  <script src="js/dane/przyklady.js"></script>
+  <script src="js/walidator.js"></script>
+  <script src="js/agregator.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/kreator.js"></script>
+</body>
+</html>

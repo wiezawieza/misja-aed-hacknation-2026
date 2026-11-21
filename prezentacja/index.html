@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Misja AED – prezentacja</title>
+<style>
+  @page { size: 1280px 720px; margin: 0; }
+  :root { --red:#D0142C; --navy:#13294B; --green:#007A50; --gray:#5B6B82; --bg:#F5F7FA; --line:#D5DCE6; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #0E1B30; font-family: "Segoe UI", system-ui, Arial, sans-serif; color: var(--navy); }
+  .slide { width: 1280px; height: 720px; margin: 24px auto; background: #fff; position: relative; overflow: hidden; padding: 54px 64px 48px; page-break-after: always; box-shadow: 0 10px 40px rgba(0,0,0,.35); }
+  .slide:last-child { page-break-after: auto; }
+  @media print { html, body { background: #fff; } .slide { margin: 0; box-shadow: none; } .nav { display: none; } }
+  h1 { font-size: 46px; line-height: 1.1; margin: 0 0 18px; }
+  h2 { font-size: 34px; margin: 0 0 18px; line-height: 1.15; }
+  p, li { font-size: 19px; line-height: 1.45; }
+  ul { margin: 0; padding-left: 22px; }
+  .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-weight: 800; color: var(--red); font-size: 14px; margin-bottom: 10px; }
+  .foot { position: absolute; left: 64px; right: 64px; bottom: 18px; display: flex; justify-content: space-between; font-size: 13px; color: var(--gray); }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; align-items: start; }
+  .cols.c64 { grid-template-columns: 1.1fr .9fr; }
+  .shot { width: 100%; border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 8px 24px rgba(19,41,75,.15); display: block; }
+  .tag { display: inline-block; padding: 3px 10px; border-radius: 99px; font-size: 13px; font-weight: 700; }
+  .t-portal { background: #E3ECFB; color: #1F3A63; } .t-nasze { background: #FDECEE; color: #8E0C1E; }
+  .flow { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; margin-top: 14px; }
+  .flow div { border: 1.5px solid var(--line); border-radius: 12px; padding: 12px; font-size: 15px; line-height: 1.35; background: #fff; }
+  .flow b { display: block; font-size: 16px; margin: 6px 0 4px; }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 16px 0; }
+  .kpi { background: var(--bg); border-radius: 12px; padding: 14px 16px; } .kpi b { font-size: 36px; display: block; color: var(--red); line-height: 1; } .kpi span { font-size: 15px; color: var(--gray); }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; } td, th { border-bottom: 1px solid var(--line); padding: 6px 8px; text-align: left; vertical-align: top; } th { background: var(--bg); }
+  .big { font-size: 64px; font-weight: 800; color: var(--red); line-height: 1; }
+  .dark { background: var(--navy); color: #fff; } .dark .foot { color: #B9C6DA; } .dark .eyebrow { color: #FF8A98; }
+  .note { background: #FFF4DC; border-left: 5px solid #C98A00; padding: 10px 14px; border-radius: 0 10px 10px 0; font-size: 16px; }
+  .ok { color: var(--green); font-weight: 700; } .no { color: var(--red); font-weight: 700; }
+  .nav { position: fixed; bottom: 16px; right: 16px; color: #fff; font-size: 13px; opacity: .7; }
+</style>
+</head>
+<body>
+
+<section class="slide dark">
+  <div class="eyebrow">HackNation 2026 · Ministerstwo Cyfryzacji · dane.gov.pl</div>
+  <h1 style="font-size:58px;margin-top:70px">Misja AED – Dane na ratunek</h1>
+  <p style="font-size:26px;max-width:900px;color:#DDE5F0">Jeden otwarty, aktualny zbiór danych o defibrylatorach w dane.gov.pl – <b>publikowany przez dostawców</b>, ujednolicony <b>wzorcowym zakresem danych</b>, sprawdzany <b>walidatorem</b> i łączony <b>agregatorem</b>. Plus akcja „Serce na Mapie”, która przekonuje dysponentów AED do udostępniania danych.</p>
+  <p style="margin-top:60px;color:#B9C6DA">Zespół <b>Zapachowy</b> (1 osoba) · prototyp: <code>prototyp/index.html</code></p>
+  <div class="foot"><span>Misja AED</span><span>1 / 9</span></div>
+</section>
+
+<section class="slide">
+  <div class="eyebrow">Problem</div>
+  <h2>Dane o AED istnieją, ale nie da się z nich skorzystać w minutę</h2>
+  <div class="cols c64"><div>
+    <p><b>3 marca, Warszawa:</b> fotograf sejmowy, zatrzymanie krążenia – świadkowie nie wiedzą, gdzie jest działający AED. Każda minuta bez defibrylacji to nawet 10% mniej szans na przeżycie.</p>
+    <p><b>Sprawdziliśmy w praktyce</b> (API dane.gov.pl, 21.11.2026): zapytanie „defibrylator” zwraca <b>4 zbiory</b> w całym portalu.</p>
+    <ul>
+      <li>Krosno (21 AED) i Przemyśl (21) – <b>dwa różne formaty</b>, kolejność lon/lat vs JSON w kolumnie;</li>
+      <li>Marki (8) – plik CSV <b>uszkodzony</b>: API portalu widzi cały wiersz jako jedną kolumnę, zamienione współrzędne, AED „z Marek” leży w Krośnie (<b>293 km</b>);</li>
+      <li>Legionowo (24) – piąty zasób, <b>ukryty</b> w ogólnym zbiorze „Zdrowie”: wyszukiwarka „defibrylator” go nie zwraca;</li>
+      <li>Warszawa – zasób to link do API <b>wymagającego tokenu</b>: brak anonimowego pobrania;</li>
+      <li>nigdzie: statusu, godzin dostępności, kodu do szafki, daty kontroli.</li>
+    </ul></div>
+    <div><img class="shot" style="height:440px;object-fit:cover;object-position:top" src="zrzuty/06-zbior-zrodla.png" alt="Zrzut: tabela źródeł z raportami harmonizacji"><p style="font-size:14px;color:var(--gray)">Zrzut z prototypu: rejestr źródeł z raportem harmonizacji każdego zasobu.</p></div></div>
+  <div class="foot"><span>Misja AED</span><span>2 / 9</span></div>
+</section>
+
+<section class="slide">
+  <div class="eyebrow">Rozwiązanie – architektura zgodna z dane.gov.pl</div>
+  <h2>Nie przebudowujemy portalu. Dokładamy standard, walidację, agregację i onboarding.</h2>
+  <div class="flow">
+    <div><span class="tag t-portal">dane.gov.pl</span><b>Instytucja = dostawca</b>Konto instytucji w portalu; <b>oświadczenie o odpowiedzialności</b> za dane.</div>
+    <div><span class="tag t-nasze">nasze</span><b>Kreator + walidator</b>CSV/XLSX sprawdzany lokalnie wg wzorca R01–R20, autokorekta formatów.</div>
+    <div><span class="tag t-portal">dane.gov.pl</span><b>Zbiór danych → zasób</b>Publikuje <b>dostawca</b>: kategoria Zdrowie, tag SerceNaMapie, CC BY 4.0.</div>
+    <div><span class="tag t-portal">dane.gov.pl</span><b>API + dane tabelaryczne</b><code>/1.4/resources/{id}/data</code>, <code>meta.data_schema</code> (Table Schema).</div>
+    <div><span class="tag t-nasze">nasze</span><b>Agregator</b>Walidacja, licencje, zakres referencyjny, deduplikacja (pierwszeństwo źródła referencyjnego).</div>
+    <div><span class="tag t-nasze">nasze</span><b>Zbiór zbiorczy</b>Jeden zbiór CC BY 4.0 z dostawcą i licencją przy rekordzie → mapa, służby, eksport.</div>
+  </div>
+  <div class="cols" style="margin-top:22px">
+    <ul><li><b>Odpowiedzialność zostaje u dostawcy</b> – agregator niczego nie „poprawia” po cichu, tylko oznacza i raportuje (np. „Zgłoś uwagę” do zasobu).</li><li><b>Nazewnictwo portalu</b>: instytucja, zbiór danych, zasób, API, dane tabelaryczne, częstotliwość aktualizacji, stopień otwartości.</li></ul>
+    <ul><li><b>Ten model już działa w portalu:</b> 15 255 zbiorów „ceny ofertowe mieszkań” od 6 973 instytucji typu <code>developer</code> – każdy deweloper publikuje osobno, wg jednego wzorca. Przenosimy go na dysponentów AED.</li><li><b>Plik nie opuszcza komputera</b> dostawcy – walidacja w przeglądarce.</li><li><b>Format API</b> odwzorowany z prawdziwej odpowiedzi <code>api.dane.gov.pl/1.4/resources/68355/data</code> (JSON:API, <code>headers_map</code>, <code>data_schema</code>).</li></ul>
+  </div>
+  <div class="foot"><span>Misja AED</span><span>3 / 9</span></div>
+</section>
+
+<section class="slide">
+  <div class="eyebrow">Wzorcowy zakres danych</div>
+  <h2>34 pola, 20 reguł, 1 plik prawdy</h2>
+  <div class="cols c64"><div>
+    <ul>
+      <li><b>schemat/aed-schema.json</b> (Frictionless Table Schema) → generuje <b>walidator</b> w prototypie i plik <b>wzorcowy-zakres-danych-AED.xlsx</b> (Schemat · Przykladowe_dane · Slowniki · Walidacja).</li>
+      <li>Grupy: identyfikacja, lokalizacja (WGS 84, TERYT, opis miejsca w budynku), dostępność (24/7 / godziny w składni OSM opening_hours, kod do szafki – bez publikowania kodu), urządzenie (status, data kontroli, ważność elektrod), metadane i odpowiedzialność (dostawca, REGON z sumą kontrolną, licencja).</li>
+      <li><b>Zweryfikowany</b> = kontrola na miejscu nie starsza niż 12 miesięcy.</li>
+      <li>Test spójności: 20 przykładowych wierszy z XLSX przechodzi walidator prototypu z <b>0 błędów</b>.</li>
+    </ul></div>
+    <div><img class="shot" style="height:470px;object-fit:cover;object-position:top" src="zrzuty/08-schemat.png" alt="Zrzut: tabela wzorcowego zakresu danych"></div></div>
+  <div class="foot"><span>Misja AED</span><span>4 / 9</span></div>
+</section>
+
+<section class="slide">
+  <div class="eyebrow">Onboarding dostawcy</div>
+  <h2>7 kroków: od rejestracji do zasobu w portalu</h2>
+  <div class="cols"><div><img class="shot" style="height:470px;object-fit:cover;object-position:top" src="zrzuty/03-kreator-walidacja.png" alt="Zrzut: walidacja na żywo z błędami wiersz po wierszu"><p style="font-size:14px;color:var(--gray)">Walidacja na żywo: 11 typowych błędów (wzorowanych na prawdziwych zasobach), 6 z autokorektą.</p></div>
+    <div><ol style="margin:0;padding-left:22px">
+      <li>Rejestracja organizacji (REGON z sumą kontrolną)</li>
+      <li><b>Oświadczenie o odpowiedzialności</b> – bez niego kreator się nie otworzy dalej</li>
+      <li>Zbiór danych, licencja (CC BY 4.0 / CC0), <b>zakres referencyjny</b></li>
+      <li>Plik CSV/XLSX (aliasy kolumn, Windows-1250, średnik)</li>
+      <li>Walidacja wiersz po wierszu, edycja komórek, autokorekta</li>
+      <li>Podgląd: mapa, metadane, kompletność, stopień otwartości</li>
+      <li>Symulacja publikacji jako zasób instytucji + odpowiedź API + odznaka „Jesteśmy Sercem na Mapie”</li>
+    </ol><img class="shot" style="margin-top:12px;height:230px;object-fit:cover;object-position:top" src="zrzuty/05-kreator-publikacja.png" alt="Zrzut: zasób opublikowany (symulacja)"></div></div>
+  <div class="foot"><span>Misja AED</span><span>5 / 9</span></div>
+</section>
+
+<section class="slide">
+  <div class="eyebrow">Agregacja, licencje, mapa i służby</div>
+  <h2>Jeden zbiór od wszystkich dysponentów</h2>
+  <div class="kpis"><div class="kpi"><b>163</b><span>AED w zbiorze zbiorczym (73 rzeczywiste z dane.gov.pl, 90 DEMO)</span></div><div class="kpi"><b>10</b><span>źródeł wykrytych, 7 zintegrowanych</span></div><div class="kpi"><b>12</b><span>rekordów wykluczonych – licencja CC BY-NC</span></div><div class="kpi"><b>1</b><span>odrzucony – punkt 293 km od miejscowości</span></div></div>
+  <div class="cols"><img class="shot" style="height:300px;object-fit:cover;object-position:top" src="zrzuty/02-mapa-karta.png" alt="Zrzut: mapa z kartą AED"><img class="shot" style="height:300px;object-fit:cover;object-position:top" src="zrzuty/07-sluzby.png" alt="Zrzut: najbliższy działający AED"></div>
+  <p style="font-size:15px;margin-top:8px">Licencja zbioru <b>CC BY 4.0</b>, licencja źródłowa przy każdym rekordzie; CC BY-SA/NC/ND i ODbL (OSM) – oznaczone i wyłączone. Eksport: CSV, XLSX, JSON, GeoJSON, datapackage.json.</p>
+  <div class="foot"><span>Misja AED</span><span>6 / 9</span></div>
+</section>
+
+<section class="slide">
+  <div class="eyebrow">Akcja promocyjna dla dostawców danych</div>
+  <div class="cols c64" style="align-items:center"><div>
+    <img src="../logo/logo.svg" alt="Logotyp Serce na Mapie" style="height:150px">
+    <p style="font-size:40px;font-weight:800;margin:18px 0 8px">Twoje dane. <span style="color:var(--red)">Czyjeś życie.</span></p>
+    <p>Serce jest pinezką: wierzchołek wskazuje miejsce, pierścień mówi „tu jest AED”, linia EKG to rytm, który AED przywraca – i puls aktualnych danych. Hasło mówi dysponentowi wprost: jego odpowiedzialność za dane ma ludzką konsekwencję.</p>
+    <table><tr><th>Propozycja</th><th>Hasło</th><th>Ocena</th></tr><tr><td><b>Serce na Mapie</b></td><td>Twoje dane. Czyjeś życie.</td><td class="ok">wybrana</td></tr><tr><td>Minuta Życia</td><td>Każda minuta bez AED odbiera 10% szans.</td><td>ogólna</td></tr><tr><td>Gdzie AED?</td><td>Odpowiedz, zanim ktoś zapyta.</td><td>słaba jako marka</td></tr></table></div>
+    <div><img class="shot" style="height:330px;object-fit:cover;object-position:top" src="zrzuty/09-akcja.png" alt="Zrzut: strona akcji z wersjami znaku"><p style="font-size:15px">Księga znaku (PDF, 8 stron): kolory HEX/RGB/CMYK, pole ochronne, minimalna wielkość, wersje kolor/mono/negatyw, 8 zakazów. Mechanika: naklejka „Nasz AED jest na mapie”, odznaka do BIP, ranking gmin, tag SerceNaMapie.</p></div></div>
+  <div class="foot"><span>Misja AED</span><span>7 / 9</span></div>
+</section>
+
+<section class="slide">
+  <div class="eyebrow">Dostępność i urządzenia mobilne</div>
+  <h2>WCAG 2.1 AA, telefon i komputer</h2>
+  <div class="cols c64"><div><ul>
+    <li>Kontrast tekstu ≥ 4,5:1 (paleta sprawdzona obliczeniowo), widoczny fokus, link „Przejdź do treści”.</li>
+    <li>Etykiety wszystkich pól, komunikaty walidacji w regionach <code>aria-live</code>, status nie tylko kolorem (ikona + tekst).</li>
+    <li>Mapa ma <b>alternatywę tekstową</b> (widok listy); karta AED zamykana klawiszem Esc.</li>
+    <li>Układ responsywny – brak przewijania w poziomie od 360 px; menu mobilne.</li>
+    <li>Działa bez instalacji: <code>prototyp/index.html</code> otwarty z dysku (mapa z podkładem OSM przy dostępie do internetu).</li></ul></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;height:520px;overflow:hidden"><img class="shot" src="zrzuty/13-mobile-start.png" alt="Zrzut mobilny: start"><img class="shot" src="zrzuty/11-mobile-mapa.png" alt="Zrzut mobilny: mapa"><img class="shot" src="zrzuty/14-mobile-kreator.png" alt="Zrzut mobilny: kreator"></div></div>
+  <div class="foot"><span>Misja AED</span><span>8 / 9</span></div>
+</section>
+
+<section class="slide">
+  <div class="eyebrow">Demo i ograniczenia</div>
+  <h2>Jak sprawdzić – i czego uczciwie nie zrobiliśmy</h2>
+  <div class="cols"><div><p><b>Uruchomienie:</b> otwórz <code>prototyp/index.html</code> (zero instalacji) lub w katalogu projektu <code>py -m http.server 8080</code> → <code>localhost:8080/prototyp/</code>. Szczegóły: <code>INSTRUKCJA_DLA_JURY.md</code> i zakładka „Dla jury”.</p>
+    <ul><li>Skrót do walidacji: <code>#/dostawca?demo=bledy</code></li><li>Skrót do publikacji: <code>#/dostawca?demo=poprawny&amp;krok=7</code></li><li>Widok dla służb: <code>#/sluzby?miejsce=sejm</code></li></ul></div>
+    <div><p class="note"><b>Ograniczenia:</b> publikacja w dane.gov.pl jest <b>symulowana</b> (celowo – publikuje dostawca); 90 rekordów od 3 dostawców to <b>DEMO</b> (syntetyczne, oznaczone); warstwa OSM to tylko konektor bez danych (ODbL niezgodna z CC BY 4.0); agregacja z dane.gov.pl uruchamiana skryptem, nie cyklicznie; brak testów z czytnikiem ekranu. Pełna lista: <code>OGRANICZENIA.md</code>.</p>
+    <p><b>Następne kroki:</b> pilotaż z 3 gminami, harwester XML/DCAT-AP dla dużych dysponentów, cykliczny agregator na API portalu, ranking gmin w akcji.</p></div></div>
+  <div class="foot"><span>Misja AED · AI wspomagało przygotowanie; finalna praca jest autorskim rozwiązaniem zespołu Zapachowy</span><span>9 / 9</span></div>
+</section>
+<p class="nav">← / → przewijanie slajdów · druk do PDF: Ctrl+P</p>
+<script>
+  // Prosta nawigacja klawiaturą między slajdami
+  var s = Array.prototype.slice.call(document.querySelectorAll('.slide')), i = 0;
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') i = Math.min(s.length - 1, i + 1);
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') i = Math.max(0, i - 1); else return;
+    e.preventDefault(); s[i].scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+</script>
+</body>
+</html>

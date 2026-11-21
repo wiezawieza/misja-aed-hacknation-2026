@@ -21,6 +21,7 @@ Nie trzeba niczego instalować ani konfigurować.
 
 ### 1. Uruchom prototyp
 Wybierz **jeden** sposób:
+- **Online (najprościej):** otwórz https://wiezawieza.github.io/misja-aed-hacknation-2026/ – prototyp działa od razu w przeglądarce (GitHub Pages).
 - **A (zero instalacji):** kliknij dwukrotnie `prototyp/index.html`.
 - **B (Windows, jedno kliknięcie):** `URUCHOM.bat` – uruchomi serwer (Node.js lub Python, jeśli są) albo otworzy plik bezpośrednio.
 - **C (jedna komenda):** w katalogu projektu `npm start` (Node.js, **bez** `npm install` – serwer bez zależności) lub `py -m http.server 8080`, a potem adres `http://localhost:8080/prototyp/`.

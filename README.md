@@ -10,7 +10,9 @@ Rozwiązanie pomaga zebrać w **dane.gov.pl** ogólnopolski, otwarty i możliwie
 4. **Agregację** – jeden zbiór zbiorczy z wielu zasobów, z zakresem referencyjnym źródeł, kontrolą licencji i deduplikacją.
 5. **Akcję promocyjną „Serce na Mapie” – „Twoje dane. Czyjeś życie.”** – nazwa, hasło, logotyp i księga znaku dla dysponentów AED.
 
-> Szybki start: otwórz `prototyp/index.html` (bez instalacji) albo uruchom `npm start` / `py -m http.server 8080` i wejdź na `http://localhost:8080/prototyp/`. Kroki dla jury: [INSTRUKCJA_DLA_JURY.md](INSTRUKCJA_DLA_JURY.md).
+> **Wersja online (GitHub Pages): https://wiezawieza.github.io/misja-aed-hacknation-2026/** – prototyp otwiera się od razu w przeglądarce, bez instalacji. Prezentacja: [/prezentacja/](https://wiezawieza.github.io/misja-aed-hacknation-2026/prezentacja/).
+
+> Szybki start lokalnie: otwórz `prototyp/index.html` (bez instalacji) albo uruchom `npm start` / `py -m http.server 8080` i wejdź na `http://localhost:8080/prototyp/`. Kroki dla jury: [INSTRUKCJA_DLA_JURY.md](INSTRUKCJA_DLA_JURY.md).
 
 ---
 

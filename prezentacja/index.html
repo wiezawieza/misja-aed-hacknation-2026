@@ -126,10 +126,10 @@
   <div class="cols c64"><div>
     <p><b>Działająca integracja z kodem źródłowym dane.gov.pl</b> – nie tylko prototyp, ale kompletne osadzenie w architekturze portalu:</p>
     <ul>
-      <li><b>Komponent tabelaryczny:</b> Wykorzystanie <code>DgaInformationPointTableComponent</code> i <code>DgaService.getDgaAggregatedData()</code> – ten sam wygląd, układ i zachowanie co oficjalne wykazy DGA portalu.</li>
+      <li><b>Komponent tabelaryczny:</b> Na wzór <code>DgaInformationPointTableComponent</code> i <code>DgaService.getDgaAggregatedData()</code> – ten sam wygląd, układ i zachowanie co oficjalne wykazy DGA portalu.</li>
       <li><b>34 kolumny wzorcowe:</b> Pełny zakres danych ze schematu <code>schemat/aed-schema.json</code> zintegrowany w tabeli (filtry na żywo, wyszukiwarka, sortowanie, paginacja, eksport CSV i JSON).</li>
       <li><b>163 rekordy:</b> 73 prawdziwe z rejestrów dane.gov.pl + 90 DEMO, 52 zweryfikowane urządzenia, 7 instytucji-dostawców.</li>
-      <li><b>Agregacja w backendzie:</b> Pełna zgodność ze schematem metody <code>create_main_dga_df()</code> oraz zadaniem Celery <code>create_main_dga_resource_task</code>.</li>
+      <li><b>Agregacja w backendzie:</b> Oparcie na wzorcu metody <code>create_main_dga_df()</code> oraz zadaniu Celery <code>create_main_dga_resource_task</code>.</li>
       <li><b>Osobne publiczne repozytorium:</b> <a href="https://github.com/wiezawieza/misja-aed-portal-wykaz" target="_blank" style="color:var(--navy);font-weight:700">github.com/wiezawieza/misja-aed-portal-wykaz</a> (kod portalu + nasz przyrost).</li>
     </ul>
     <p style="font-size:14px;color:var(--gray);margin-top:10px">Szczegółowy raport z integracji: <code>WYKAZ-INTEGRACJA.md</code>.</p>

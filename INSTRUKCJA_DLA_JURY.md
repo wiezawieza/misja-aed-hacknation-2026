@@ -15,14 +15,14 @@ Nie trzeba niczego instalować ani konfigurować.
 | `ksiega-znaku.pdf` | Księga znaku (8 stron) |
 | `prezentacja/index.html`, `prezentacja/prezentacja.pdf` | Prezentacja (10 slajdów) z prawdziwymi zrzutami ekranu |
 | `README.md`, `OGRANICZENIA.md` | Opis rozwiązania i uczciwa lista ograniczeń |
+| `WYKAZ-INTEGRACJA.md` | Raport z integracji Wykazu AED z kodem źródłowym portalu dane.gov.pl (MCOD); repozytorium: https://github.com/wiezawieza/misja-aed-portal-wykaz |
 | `dane/zrodla-surowe/` | Surowe pliki pobrane z API dane.gov.pl (dowód, że agregujemy prawdziwe zasoby) |
 
 ## Kroki
 
 ### 1. Uruchom prototyp
 Wybierz **jeden** sposób:
-- **Online (najprościej):** otwórz https://wiezawieza.github.io/misja-aed-hacknation-2026/ – prototyp działa od razu w przeglądarce (GitHub Pages).
-- **A (zero instalacji):** kliknij dwukrotnie `prototyp/index.html`.
+- **A (najprościej, zero instalacji):** kliknij dwukrotnie `prototyp/index.html` (otwiera się od razu w przeglądarce).
 - **B (Windows, jedno kliknięcie):** `URUCHOM.bat` – uruchomi serwer (Node.js lub Python, jeśli są) albo otworzy plik bezpośrednio.
 - **C (jedna komenda):** w katalogu projektu `npm start` (Node.js, **bez** `npm install` – serwer bez zależności) lub `py -m http.server 8080`, a potem adres `http://localhost:8080/prototyp/`.
 
@@ -99,3 +99,7 @@ Strona startowa → sekcja **„Jak to działa”**; README → sekcja „Zgodno
 Otwórz `prezentacja/index.html` (strzałki ← →) lub `prezentacja/prezentacja.pdf`.
 
 **Oczekiwany rezultat:** 10 slajdów: problem, architektura zgodna z dane.gov.pl, wzorcowy zakres, onboarding, agregacja i licencje, wykaz w kodzie portalu dane.gov.pl, akcja i logo, dostępność, demo i ograniczenia – ze zrzutami z działającego prototypu i portalu.
+
+## Wykorzystanie AI
+
+Zgodnie z regulaminem: przy przygotowaniu rozwiązania korzystaliśmy z asystenta AI (generowanie i przegląd kodu, redakcja tekstów, wsparcie przy projektowaniu znaku). Koncepcja, decyzje projektowe, weryfikacja danych i finalna praca są autorskim rozwiązaniem zespołu **Zapachowy** (1 osoba).

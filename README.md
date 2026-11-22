@@ -10,9 +10,7 @@ Rozwiązanie pomaga zebrać w **dane.gov.pl** ogólnopolski, otwarty i możliwie
 4. **Agregację** – jeden zbiór zbiorczy z wielu zasobów, z zakresem referencyjnym źródeł, kontrolą licencji i deduplikacją.
 5. **Akcję promocyjną „Serce na Mapie” – „Twoje dane. Czyjeś życie.”** – nazwa, hasło, logotyp i księga znaku dla dysponentów AED.
 
-> **Wersja online (GitHub Pages): https://wiezawieza.github.io/misja-aed-hacknation-2026/** – prototyp otwiera się od razu w przeglądarce, bez instalacji. Prezentacja: [/prezentacja/](https://wiezawieza.github.io/misja-aed-hacknation-2026/prezentacja/).
-
-> Szybki start lokalnie: otwórz `prototyp/index.html` (bez instalacji) albo uruchom `npm start` / `py -m http.server 8080` i wejdź na `http://localhost:8080/prototyp/`. Kroki dla jury: [INSTRUKCJA_DLA_JURY.md](INSTRUKCJA_DLA_JURY.md).
+> **Szybki start (najprościej):** kliknij dwukrotnie `prototyp/index.html` – prototyp otwiera się od razu w przeglądarce, bez instalacji i bez konieczności uruchamiania serwera. Prezentacja: `prezentacja/index.html` (lub [prezentacja.pdf](prezentacja/prezentacja.pdf)). Kroki dla jury: [INSTRUKCJA_DLA_JURY.md](INSTRUKCJA_DLA_JURY.md).
 
 ---
 
@@ -105,7 +103,7 @@ Pliki: `logo/` (SVG z tekstem zamienionym na krzywe, PNG, JPG, PDF; wersje mono,
 ## Dane w prototypie
 
 - **Rzeczywiste (73 rekordy w zbiorze zbiorczym):** zasoby dane.gov.pl Krosna (21), Przemyśla (21), Marek (8, z czego 1 odrzucony jako punkt odstający) i Legionowa (24). Surowe pliki i metadane z API: `dane/zrodla-surowe/`.
-- **DEMO (syntetyczne, wyraźnie oznaczone, 90 + 12 rekordów):** fikcyjni dostawcy „Fundacja Bicie Serca (DEMO)”, „Sieć sklepów Koszyk (DEMO)”, „Powiatowe Centrum Medyczne (DEMO)” oraz „Stowarzyszenie Ratujmy Razem (DEMO)” na licencji CC BY-NC (pokazuje wykluczenie licencyjne). Każdy rekord DEMO ma w uwagach „REKORD DEMONSTRACYJNY – dane syntetyczne, nie używać operacyjnie”.
+- **DEMO (syntetyczne, wyraźnie oznaczone, 90 rekordów; razem 163 = 73 prawdziwe + 90 DEMO):** fikcyjni dostawcy „Fundacja Bicie Serca (DEMO)”, „Sieć sklepów Koszyk (DEMO)” i „Powiatowe Centrum Medyczne (DEMO)”. Dodatkowe źródło „Stowarzyszenie Ratujmy Razem (DEMO)” na licencji CC BY-NC (12 rekordów) pokazuje mechanizm wykluczenia licencyjnego. Każdy rekord DEMO ma w uwagach „REKORD DEMONSTRACYJNY – dane syntetyczne, nie używać operacyjnie”.
 - **OpenStreetMap (ODbL):** tylko konektor (warstwa pomocnicza poza zbiorem), **świadomie bez danych** – licencja ODbL (share-alike) jest niezgodna z CC BY 4.0 zbioru zbiorczego.
 
 ## Struktura repozytorium

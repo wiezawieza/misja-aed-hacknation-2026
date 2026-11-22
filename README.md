@@ -55,7 +55,7 @@ Jako dopełnienie prototypu przygotowaliśmy pełną integrację Ogólnopolskieg
 📖 **Szczegółowy raport i opis integracji:** [WYKAZ-INTEGRACJA.md](WYKAZ-INTEGRACJA.md)
 
 ### Kluczowe komponenty portalu wykorzystane w integracji:
-- **`DgaInformationPointTableComponent`** (`frontend/src/app/pages/dga-information-point/...`) – komponent tabelaryczny portalu odpowiedzialny za prezentację wykazów wielokolumnowych (osadzający `<app-resource-table-no-filters>`). Na jego wzorcu wdrożono dedykowany widok Wykazu AED (34 kolumny wzorcowe, 163 rekordy, filtry i wyszukiwanie na żywo).
+- **`DgaInformationPointTableComponent`** (`frontend/src/app/pages/dga-information-point/...`) – komponent tabelaryczny portalu odpowiedzialny za prezentację wykazów wielokolumnowych (osadzający `<app-resource-table-no-filters>`). Na jego wzorcu wdrożono dedykowany widok Wykazu AED (34 kolumny wzorcowe, 163 rekordy: 73 prawdziwe + 90 DEMO, 52 zweryfikowane, 7 dostawców; filtry i wyszukiwanie na żywo).
 - **`DgaService.getDgaAggregatedData()`** (`frontend/src/app/services/dga.service.ts`) – metoda serwisu frontendowego pobierająca zagregowane dane tabelaryczne z API portalu do widoku wykazu.
 - **`create_main_dga_df()`** (`backend/mcod/resources/dga_utils.py`) – kluczowa metoda backendowa łącząca i harmonizująca rozproszone zbiory danych opublikowane przez różne instytucje w jeden spójny DataFrame (`AggregatedDGAInfo`).
 - **`create_main_dga_resource_task`** (`backend/mcod/resources/tasks/dga.py`) – zadanie asynchroniczne Celery realizujące cykliczną agregację zasobów od dostawców.
@@ -63,7 +63,7 @@ Jako dopełnienie prototypu przygotowaliśmy pełną integrację Ogólnopolskieg
 ## Funkcjonalności i kroki użytkownika
 
 ### Start (landing akcji) – `#/`
-Problem (minuta życia, historia z 3 marca), liczniki zbioru zbiorczego (AED, dostawcy, zweryfikowane), mapa, baner akcji „Serce na Mapie” z wezwaniem dla dysponentów, schemat działania z podziałem: mechanizmy portalu vs nasze rozwiązanie.
+Problem (minuta życia, historia z 3 marca), liczniki zbioru zbiorczego (163 AED: 73 prawdziwe + 90 DEMO, 52 zweryfikowane, 7 dostawców), mapa, baner akcji „Serce na Mapie” z wezwaniem dla dysponentów, schemat działania z podziałem: mechanizmy portalu vs nasze rozwiązanie.
 
 ### Mapa AED – `#/mapa`
 1. Ustaw filtry: status (aktywny / w serwisie / nieaktywny / brak danych), 24/7, dostęp publiczny, zweryfikowane / niezweryfikowane, dostawca.
@@ -103,7 +103,7 @@ Pliki: `logo/` (SVG z tekstem zamienionym na krzywe, PNG, JPG, PDF; wersje mono,
 ## Dane w prototypie
 
 - **Rzeczywiste (73 rekordy w zbiorze zbiorczym):** zasoby dane.gov.pl Krosna (21), Przemyśla (21), Marek (8, z czego 1 odrzucony jako punkt odstający) i Legionowa (24). Surowe pliki i metadane z API: `dane/zrodla-surowe/`.
-- **DEMO (syntetyczne, wyraźnie oznaczone, 90 rekordów; razem 163 = 73 prawdziwe + 90 DEMO):** fikcyjni dostawcy „Fundacja Bicie Serca (DEMO)”, „Sieć sklepów Koszyk (DEMO)” i „Powiatowe Centrum Medyczne (DEMO)”. Dodatkowe źródło „Stowarzyszenie Ratujmy Razem (DEMO)” na licencji CC BY-NC (12 rekordów) pokazuje mechanizm wykluczenia licencyjnego. Każdy rekord DEMO ma w uwagach „REKORD DEMONSTRACYJNY – dane syntetyczne, nie używać operacyjnie”.
+- **DEMO (syntetyczne, wyraźnie oznaczone, 90 rekordów; razem 163 = 73 prawdziwe + 90 DEMO, 52 zweryfikowane, 7 dostawców):** fikcyjni dostawcy „Fundacja Bicie Serca (DEMO)”, „Sieć sklepów Koszyk (DEMO)” i „Powiatowe Centrum Medyczne (DEMO)”. Dodatkowe źródło „Stowarzyszenie Ratujmy Razem (DEMO)” na licencji CC BY-NC (12 rekordów) pokazuje mechanizm wykluczenia licencyjnego. Każdy rekord DEMO ma w uwagach „REKORD DEMONSTRACYJNY – dane syntetyczne, nie używać operacyjnie”.
 - **OpenStreetMap (ODbL):** tylko konektor (warstwa pomocnicza poza zbiorem), **świadomie bez danych** – licencja ODbL (share-alike) jest niezgodna z CC BY 4.0 zbioru zbiorczego.
 
 ## Struktura repozytorium

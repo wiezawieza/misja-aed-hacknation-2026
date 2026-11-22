@@ -95,7 +95,15 @@ Strona startowa → sekcja **„Jak to działa”**; README → sekcja „Zgodno
 
 **Oczekiwany rezultat:** wskazany precedens z portalu (15 255 zbiorów „ceny ofertowe mieszkań” od 6 971 instytucji typu `developer` – każdy deweloper to osobny dostawca publikujący wg jednego wzorca; materiały bazy wiedzy dla deweloperów i starostów); odwzorowanie pojęć portalu (instytucja = dostawca, zbiór danych, zasób, API `/1.4/resources/{id}/data`, dane tabelaryczne z Table Schema, częstotliwość aktualizacji, stopień otwartości, „Zgłoś uwagę”); prototyp **nie publikuje** niczego w portalu – publikuje dostawca.
 
-### 15. Prezentacja
+### 15. Wykaz AED w portalu dane.gov.pl (uruchomienie lokalne)
+Uruchomienie oficjalnego frontendu portalu dane.gov.pl z osadzonym Wykazem AED:
+1. Przejdź do folderu frontendu portalu: `cd portal-wykaz/frontend` (lub sklonuj repozytorium: `git clone https://github.com/wiezawieza/misja-aed-portal-wykaz.git`).
+2. Uruchom serwer lokalny: `npm run start:local` (lub `npm install --legacy-peer-deps && npm run start:local`).
+3. Otwórz w przeglądarce adres: **`http://localhost:4200/pl/wykaz-aed`**.
+
+**Oczekiwany rezultat:** pełny interfejs portalu dane.gov.pl z pozycją „Wykaz AED” w menu głównym; tabela wzorcowa (34 kolumny ze schematu, 163 rekordy: 73 prawdziwe + 90 DEMO, 52 zweryfikowane, 7 dostawców), filtry na żywo, wyszukiwarka, sortowanie, stronicowanie, eksport CSV i JSON oraz panel administracyjny opisujący proces zasilania zasobu. Raport techniczny w `WYKAZ-INTEGRACJA.md`.
+
+### 16. Prezentacja
 Otwórz `prezentacja/index.html` (strzałki ← →) lub `prezentacja/prezentacja.pdf`.
 
 **Oczekiwany rezultat:** 10 slajdów: problem, architektura zgodna z dane.gov.pl, wzorcowy zakres, onboarding, agregacja i licencje, wykaz w kodzie portalu dane.gov.pl, akcja i logo, dostępność, demo i ograniczenia – ze zrzutami z działającego prototypu i portalu.

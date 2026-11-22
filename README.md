@@ -49,6 +49,19 @@ W żadnym źródle nie ma statusu urządzenia, godzin dostępności, informacji 
 
 **Zasada nadrzędna:** prototyp niczego nie publikuje w produkcyjnym portalu. Publikacja w kroku 7 jest symulacją – w rzeczywistości dostawca dodaje plik w swoim panelu instytucji (lub konfiguruje harwester), a agregator pobiera zasoby przez publiczne API. Agregator **nie poprawia merytorycznie danych dostawcy** – oznacza błędy i odsyła je do dostawcy.
 
+## WYKAZ AED w portalu dane.gov.pl
+
+Jako dopełnienie prototypu przygotowaliśmy pełną integrację Ogólnopolskiego Wykazu AED bezpośrednio w oficjalnym kodzie źródłowym portalu **dane.gov.pl** (MCOD – frontend Angular 18 + backend Python/Django).
+
+🔗 **Osobne repozytorium z działającym portalem:** **https://github.com/wiezawieza/misja-aed-portal-wykaz**  
+📖 **Szczegółowy raport i opis integracji:** [WYKAZ-INTEGRACJA.md](WYKAZ-INTEGRACJA.md)
+
+### Kluczowe komponenty portalu wykorzystane w integracji:
+- **`DgaInformationPointTableComponent`** (`frontend/src/app/pages/dga-information-point/...`) – komponent tabelaryczny portalu odpowiedzialny za prezentację wykazów wielokolumnowych (osadzający `<app-resource-table-no-filters>`). Na jego wzorcu wdrożono dedykowany widok Wykazu AED (34 kolumny wzorcowe, 163 rekordy, filtry i wyszukiwanie na żywo).
+- **`DgaService.getDgaAggregatedData()`** (`frontend/src/app/services/dga.service.ts`) – metoda serwisu frontendowego pobierająca zagregowane dane tabelaryczne z API portalu do widoku wykazu.
+- **`create_main_dga_df()`** (`backend/mcod/resources/dga_utils.py`) – kluczowa metoda backendowa łącząca i harmonizująca rozproszone zbiory danych opublikowane przez różne instytucje w jeden spójny DataFrame (`AggregatedDGAInfo`).
+- **`create_main_dga_resource_task`** (`backend/mcod/resources/tasks/dga.py`) – zadanie asynchroniczne Celery realizujące cykliczną agregację zasobów od dostawców.
+
 ## Funkcjonalności i kroki użytkownika
 
 ### Start (landing akcji) – `#/`
@@ -107,8 +120,9 @@ prototyp/                 aplikacja (HTML/CSS/JS bez kroku budowania, działa z 
 schemat/                  aed-schema.json (jedno źródło prawdy), szablon i przykład CSV
 dane/zrodla-surowe/       surowe zasoby z dane.gov.pl + metadane API
 logo/                     logotyp i warianty (SVG/PNG/JPG/PDF)
-prezentacja/              slajdy HTML + PDF + zrzuty ekranu
+prezentacja/              slajdy HTML + PDF (10 slajdów) + zrzuty ekranu
 narzedzia/                skrypty: zbuduj_dane.py, generuj_xlsx.py, generuj_logo.py, generuj_ksiege.py, zrzuty*.py, serwer.mjs
+WYKAZ-INTEGRACJA.md       raport z integracji Wykazu AED z kodem źródłowym portalu dane.gov.pl
 ```
 
 Odtworzenie artefaktów (opcjonalne, Python 3.11 + `pip install openpyxl pillow fonttools`): `py narzedzia/zbuduj_dane.py`, `py narzedzia/generuj_xlsx.py`, `py narzedzia/generuj_logo.py`, `py narzedzia/generuj_ksiege.py`.

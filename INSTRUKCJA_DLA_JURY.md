@@ -13,7 +13,7 @@ Nie trzeba niczego instalować ani konfigurować.
 | `schemat/szablon-AED.csv`, `schemat/przyklad-AED.csv` | Pusty szablon CSV i przykład zgodny ze wzorcem |
 | `logo/logo.svg`, `logo.png`, `logo.jpg`, `logo.pdf` | Logotyp akcji „Serce na Mapie” (+ wersje mono, negatyw, pionowa, sygnet) |
 | `ksiega-znaku.pdf` | Księga znaku (8 stron) |
-| `prezentacja/index.html`, `prezentacja/prezentacja.pdf` | Prezentacja (9 slajdów) z prawdziwymi zrzutami ekranu |
+| `prezentacja/index.html`, `prezentacja/prezentacja.pdf` | Prezentacja (10 slajdów) z prawdziwymi zrzutami ekranu |
 | `README.md`, `OGRANICZENIA.md` | Opis rozwiązania i uczciwa lista ograniczeń |
 | `dane/zrodla-surowe/` | Surowe pliki pobrane z API dane.gov.pl (dowód, że agregujemy prawdziwe zasoby) |
 
@@ -98,4 +98,4 @@ Strona startowa → sekcja **„Jak to działa”**; README → sekcja „Zgodno
 ### 15. Prezentacja
 Otwórz `prezentacja/index.html` (strzałki ← →) lub `prezentacja/prezentacja.pdf`.
 
-**Oczekiwany rezultat:** 9 slajdów: problem, architektura zgodna z dane.gov.pl, wzorcowy zakres, onboarding, agregacja i licencje, akcja i logo, dostępność, demo i ograniczenia – ze zrzutami z działającego prototypu.
+**Oczekiwany rezultat:** 10 slajdów: problem, architektura zgodna z dane.gov.pl, wzorcowy zakres, onboarding, agregacja i licencje, wykaz w kodzie portalu dane.gov.pl, akcja i logo, dostępność, demo i ograniczenia – ze zrzutami z działającego prototypu i portalu.

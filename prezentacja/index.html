@@ -43,7 +43,7 @@
   <h1 style="font-size:58px;margin-top:70px">Misja AED – Dane na ratunek</h1>
   <p style="font-size:26px;max-width:900px;color:#DDE5F0">Jeden otwarty, aktualny zbiór danych o defibrylatorach w dane.gov.pl – <b>publikowany przez dostawców</b>, ujednolicony <b>wzorcowym zakresem danych</b>, sprawdzany <b>walidatorem</b> i łączony <b>agregatorem</b>. Plus akcja „Serce na Mapie”, która przekonuje dysponentów AED do udostępniania danych.</p>
   <p style="margin-top:60px;color:#B9C6DA">Zespół <b>Zapachowy</b> (1 osoba) · prototyp: <code>prototyp/index.html</code></p>
-  <div class="foot"><span>Misja AED</span><span>1 / 9</span></div>
+  <div class="foot"><span>Misja AED</span><span>1 / 10</span></div>
 </section>
 
 <section class="slide">
@@ -60,7 +60,7 @@
       <li>nigdzie: statusu, godzin dostępności, kodu do szafki, daty kontroli.</li>
     </ul></div>
     <div><img class="shot" style="height:440px;object-fit:cover;object-position:top" src="zrzuty/06-zbior-zrodla.png" alt="Zrzut: tabela źródeł z raportami harmonizacji"><p style="font-size:14px;color:var(--gray)">Zrzut z prototypu: rejestr źródeł z raportem harmonizacji każdego zasobu.</p></div></div>
-  <div class="foot"><span>Misja AED</span><span>2 / 9</span></div>
+  <div class="foot"><span>Misja AED</span><span>2 / 10</span></div>
 </section>
 
 <section class="slide">
@@ -78,7 +78,7 @@
     <ul><li><b>Odpowiedzialność zostaje u dostawcy</b> – agregator niczego nie „poprawia” po cichu, tylko oznacza i raportuje (np. „Zgłoś uwagę” do zasobu).</li><li><b>Nazewnictwo portalu</b>: instytucja, zbiór danych, zasób, API, dane tabelaryczne, częstotliwość aktualizacji, stopień otwartości.</li></ul>
     <ul><li><b>Ten model już działa w portalu:</b> 15 255 zbiorów „ceny ofertowe mieszkań” od 6 971 instytucji typu <code>developer</code> – każdy deweloper publikuje osobno, wg jednego wzorca. Przenosimy go na dysponentów AED.</li><li><b>Plik nie opuszcza komputera</b> dostawcy – walidacja w przeglądarce.</li><li><b>Format API</b> odwzorowany z prawdziwej odpowiedzi <code>api.dane.gov.pl/1.4/resources/68355/data</code> (JSON:API, <code>headers_map</code>, <code>data_schema</code>).</li></ul>
   </div>
-  <div class="foot"><span>Misja AED</span><span>3 / 9</span></div>
+  <div class="foot"><span>Misja AED</span><span>3 / 10</span></div>
 </section>
 
 <section class="slide">
@@ -92,7 +92,7 @@
       <li>Test spójności: 20 przykładowych wierszy z XLSX przechodzi walidator prototypu z <b>0 błędów</b>.</li>
     </ul></div>
     <div><img class="shot" style="height:470px;object-fit:cover;object-position:top" src="zrzuty/08-schemat.png" alt="Zrzut: tabela wzorcowego zakresu danych"></div></div>
-  <div class="foot"><span>Misja AED</span><span>4 / 9</span></div>
+  <div class="foot"><span>Misja AED</span><span>4 / 10</span></div>
 </section>
 
 <section class="slide">
@@ -108,7 +108,7 @@
       <li>Podgląd: mapa, metadane, kompletność, stopień otwartości</li>
       <li>Symulacja publikacji jako zasób instytucji + odpowiedź API + odznaka „Jesteśmy Sercem na Mapie”</li>
     </ol><img class="shot" style="margin-top:12px;height:230px;object-fit:cover;object-position:top" src="zrzuty/05-kreator-publikacja.png" alt="Zrzut: zasób opublikowany (symulacja)"></div></div>
-  <div class="foot"><span>Misja AED</span><span>5 / 9</span></div>
+  <div class="foot"><span>Misja AED</span><span>5 / 10</span></div>
 </section>
 
 <section class="slide">
@@ -117,7 +117,28 @@
   <div class="kpis"><div class="kpi"><b>163</b><span>AED w zbiorze zbiorczym (73 rzeczywiste z dane.gov.pl, 90 DEMO)</span></div><div class="kpi"><b>10</b><span>źródeł wykrytych, 7 zintegrowanych</span></div><div class="kpi"><b>12</b><span>rekordów wykluczonych – licencja CC BY-NC</span></div><div class="kpi"><b>1</b><span>odrzucony – punkt 293 km od miejscowości</span></div></div>
   <div class="cols"><img class="shot" style="height:300px;object-fit:cover;object-position:top" src="zrzuty/02-mapa-karta.png" alt="Zrzut: mapa z kartą AED"><img class="shot" style="height:300px;object-fit:cover;object-position:top" src="zrzuty/07-sluzby.png" alt="Zrzut: najbliższy działający AED"></div>
   <p style="font-size:15px;margin-top:8px">Licencja zbioru <b>CC BY 4.0</b>, licencja źródłowa przy każdym rekordzie; CC BY-SA/NC/ND i ODbL (OSM) – oznaczone i wyłączone. Eksport: CSV, XLSX, JSON, GeoJSON, datapackage.json.</p>
-  <div class="foot"><span>Misja AED</span><span>6 / 9</span></div>
+  <div class="foot"><span>Misja AED</span><span>6 / 10</span></div>
+</section>
+
+<section class="slide">
+  <div class="eyebrow">Wdrożenie w portalu dane.gov.pl (MCOD)</div>
+  <h2>Ogólnopolski Wykaz AED osadzony w oficjalnym kodzie portalu</h2>
+  <div class="cols c64"><div>
+    <p><b>Działająca integracja z kodem źródłowym dane.gov.pl</b> – nie tylko prototyp, ale kompletne osadzenie w architekturze portalu:</p>
+    <ul>
+      <li><b>Komponent tabelaryczny:</b> Wykorzystanie <code>DgaInformationPointTableComponent</code> i <code>DgaService.getDgaAggregatedData()</code> – ten sam wygląd, układ i zachowanie co oficjalne wykazy DGA portalu.</li>
+      <li><b>34 kolumny wzorcowe:</b> Pełny zakres danych ze schematu <code>schemat/aed-schema.json</code> zintegrowany w tabeli (filtry na żywo, wyszukiwarka, sortowanie, paginacja, eksport CSV i JSON).</li>
+      <li><b>163 rekordy:</b> 73 prawdziwe z rejestrów dane.gov.pl + 90 DEMO, 52 zweryfikowane urządzenia, 7 instytucji-dostawców.</li>
+      <li><b>Agregacja w backendzie:</b> Pełna zgodność ze schematem metody <code>create_main_dga_df()</code> oraz zadaniem Celery <code>create_main_dga_resource_task</code>.</li>
+      <li><b>Osobne publiczne repozytorium:</b> <a href="https://github.com/wiezawieza/misja-aed-portal-wykaz" target="_blank" style="color:var(--navy);font-weight:700">github.com/wiezawieza/misja-aed-portal-wykaz</a> (kod portalu + nasz przyrost).</li>
+    </ul>
+    <p style="font-size:14px;color:var(--gray);margin-top:10px">Szczegółowy raport z integracji: <code>WYKAZ-INTEGRACJA.md</code>.</p>
+  </div>
+  <div>
+    <img class="shot" style="height:440px;object-fit:cover;object-position:top" src="zrzuty/wykaz-aed-portal.png" alt="Zrzut: Wykaz AED osadzony w portalu dane.gov.pl">
+    <p style="font-size:14px;color:var(--gray)">Zrzut ekranu: Wykaz AED uruchomiony lokalnie w portalu dane.gov.pl (localhost:4200).</p>
+  </div></div>
+  <div class="foot"><span>Misja AED</span><span>7 / 10</span></div>
 </section>
 
 <section class="slide">
@@ -128,7 +149,7 @@
     <p>Serce jest pinezką: wierzchołek wskazuje miejsce, pierścień mówi „tu jest AED”, linia EKG to rytm, który AED przywraca – i puls aktualnych danych. Hasło mówi dysponentowi wprost: jego odpowiedzialność za dane ma ludzką konsekwencję.</p>
     <table><tr><th>Propozycja</th><th>Hasło</th><th>Ocena</th></tr><tr><td><b>Serce na Mapie</b></td><td>Twoje dane. Czyjeś życie.</td><td class="ok">wybrana</td></tr><tr><td>Minuta Życia</td><td>Każda minuta bez AED odbiera 10% szans.</td><td>ogólna</td></tr><tr><td>Gdzie AED?</td><td>Odpowiedz, zanim ktoś zapyta.</td><td>słaba jako marka</td></tr></table></div>
     <div><img class="shot" style="height:330px;object-fit:cover;object-position:top" src="zrzuty/09-akcja.png" alt="Zrzut: strona akcji z wersjami znaku"><p style="font-size:15px">Księga znaku (PDF, 8 stron): kolory HEX/RGB/CMYK, pole ochronne, minimalna wielkość, wersje kolor/mono/negatyw, 8 zakazów. Mechanika: naklejka „Nasz AED jest na mapie”, odznaka do BIP, ranking gmin, tag SerceNaMapie.</p></div></div>
-  <div class="foot"><span>Misja AED</span><span>7 / 9</span></div>
+  <div class="foot"><span>Misja AED</span><span>8 / 10</span></div>
 </section>
 
 <section class="slide">
@@ -141,7 +162,7 @@
     <li>Układ responsywny – brak przewijania w poziomie od 360 px; menu mobilne.</li>
     <li>Działa bez instalacji: <code>prototyp/index.html</code> otwarty z dysku (mapa z podkładem OSM przy dostępie do internetu).</li></ul></div>
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;height:520px;overflow:hidden"><img class="shot" src="zrzuty/13-mobile-start.png" alt="Zrzut mobilny: start"><img class="shot" src="zrzuty/11-mobile-mapa.png" alt="Zrzut mobilny: mapa"><img class="shot" src="zrzuty/14-mobile-kreator.png" alt="Zrzut mobilny: kreator"></div></div>
-  <div class="foot"><span>Misja AED</span><span>8 / 9</span></div>
+  <div class="foot"><span>Misja AED</span><span>9 / 10</span></div>
 </section>
 
 <section class="slide">
@@ -151,7 +172,7 @@
     <ul><li>Skrót do walidacji: <code>#/dostawca?demo=bledy</code></li><li>Skrót do publikacji: <code>#/dostawca?demo=poprawny&amp;krok=7</code></li><li>Widok dla służb: <code>#/sluzby?miejsce=sejm</code></li></ul></div>
     <div><p class="note"><b>Ograniczenia:</b> publikacja w dane.gov.pl jest <b>symulowana</b> (celowo – publikuje dostawca); 90 rekordów od 3 dostawców to <b>DEMO</b> (syntetyczne, oznaczone); warstwa OSM to tylko konektor bez danych (ODbL niezgodna z CC BY 4.0); agregacja z dane.gov.pl uruchamiana skryptem, nie cyklicznie; brak testów z czytnikiem ekranu. Pełna lista: <code>OGRANICZENIA.md</code>.</p>
     <p><b>Następne kroki:</b> pilotaż z 3 gminami, harwester XML/DCAT-AP dla dużych dysponentów, cykliczny agregator na API portalu, ranking gmin w akcji.</p></div></div>
-  <div class="foot"><span>Misja AED · AI wspomagało przygotowanie; finalna praca jest autorskim rozwiązaniem zespołu Zapachowy</span><span>9 / 9</span></div>
+  <div class="foot"><span>Misja AED · AI wspomagało przygotowanie; finalna praca jest autorskim rozwiązaniem zespołu Zapachowy</span><span>10 / 10</span></div>
 </section>
 <p class="nav">← / → przewijanie slajdów · druk do PDF: Ctrl+P</p>
 <script>

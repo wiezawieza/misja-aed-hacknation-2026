@@ -78,7 +78,7 @@ p{{font-size:10.5pt;line-height:1.55;margin:0 0 3mm}} .mini{{font-size:8.5pt;col
 .box{{background:#F5F7FA;border-radius:4mm;padding:6mm}}
 .anat text{{font-family:Poppins,Segoe UI,sans-serif;font-size:4.2px;fill:#13294B}}
 .sticker{{background:#007A50;border-radius:6mm;padding:5mm;width:62mm;color:#fff;text-align:center}} .sticker .in{{background:#fff;border-radius:4mm;padding:4mm;color:#13294B}}
-.poster{{background:#13294B;color:#fff;border-radius:3mm;padding:7mm;width:64mm;height:90mm;display:flex;flex-direction:column;justify-content:space-between}} .poster b.big{{font-size:19pt;line-height:1.1}} .poster span{{color:#FF8A98}}
+.poster{{background:#13294B;color:#fff;border-radius:3mm;padding:7mm;width:64mm;height:90mm;display:flex;flex-direction:column;justify-content:space-between}} .poster b.big{{font-size:19pt;line-height:1.1}} .poster span{{color:#fff}}
 ul{{margin:0;padding-left:5mm;font-size:10.5pt;line-height:1.6}}
 </style></head><body>
 
@@ -109,7 +109,7 @@ ul{{margin:0;padding-left:5mm;font-size:10.5pt;line-height:1.6}}
 <div><div class="tile">{svg("logo-czarne.svg", h=82)}</div><p class="cap"><b>Czarna</b> – faks, pieczęć, grawer, druk czarno-biały</p></div>
 <div><div class="tile dark">{svg("logo-negatyw.svg", h=82)}</div><p class="cap"><b>Negatyw</b> – na granacie i ciemnych tłach</p></div>
 <div><div class="tile red">{svg("logo-negatyw.svg", h=82)}</div><p class="cap"><b>Negatyw na czerwieni</b> – materiały akcyjne</p></div>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:4mm"><div><div class="tile">{svg("logo-pionowe.svg", h=86)}</div><p class="cap"><b>Pionowa</b></p></div><div><div class="tile">{svg("sygnet.svg", h=80)}</div><p class="cap"><b>Sygnet</b> – awatar, favicon</p></div></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:4mm"><div><div class="tile" style="padding:4mm">{svg("logo-pionowe.svg", h=58)}</div><p class="cap"><b>Pionowa</b></p></div><div><div class="tile">{svg("sygnet.svg", h=75)}</div><p class="cap"><b>Sygnet</b> – awatar, favicon</p></div></div>
 </div><div class="num"><b>Serce na Mapie</b> · księga znaku · 3</div></section>
 
 <section class="page"><div class="eyebrow">03 · Kolorystyka</div><h2>Paleta barw</h2><div class="grid4" style="grid-template-columns:repeat(5,1fr)">{kolory_html}</div>
